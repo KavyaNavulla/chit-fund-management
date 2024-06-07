@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Member</title>
+    <link rel="stylesheet" href="../static/cstyle.css">
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Welcome {{ username }} !!</a></p>
+        </div>
+        <div class="right-links">
+            <a href="/home">Home</a>
+            <!-- <a href="">Change Profile</a> -->
+            <a href="/"><button class="btn">Log Out</button></a>
+        </div>
+
+    </div>
+    <div class="container">
+        <h1>Add Member</h1>
+        <form action="{{ url_for('add_member') }}" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" id="phone_number" name="phone_number" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="form-group">
+                <label for="scheme_id">Scheme:</label>
+                <select id="scheme_id" name="scheme_id" required>
+                    {% for scheme in schemes %}
+                    <option value="{{ scheme.id }}">{{ scheme.name_of_scheme }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group"><button type="submit">Add Member</button></div>
+        </form>
+    </div>
+</body>
+
+</html>

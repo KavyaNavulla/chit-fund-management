@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Scheme</title>
+  <link rel="stylesheet" href="../static/cstyle.css">
+
+</head>
+
+<body>
+  <div class="nav">
+    <div class="logo">
+      <p>Welcome {{ username }} !!</a></p>
+    </div>
+    <div class="right-links">
+      <a href="/home">Home</a>
+      <!-- <a href="">Change Profile</a> -->
+      <a href="/"><button class="btn">Log Out</button></a>
+    </div>
+
+  </div>
+  <div class="container">
+  <h1>Add New Scheme</h1>
+    <form action="{{ url_for('add_schemes') }}" method="POST">
+      <div class="form-group">
+        <label for="name_of_scheme">Name of Scheme:</label><br>
+        <input type="text" id="name_of_scheme" name="name_of_scheme" required>
+      </div>
+
+      <div class="form-group">
+        <label for="principal_amount">Principal Amount:</label><br>
+        <input type="number" id="principal_amount" name="principal_amount" required>
+      </div>
+
+      <div class="form-group">
+        <label for="duration">Duration (in months):</label><br>
+        <input type="number" id="duration" name="duration" required>
+      </div>
+
+      <div class="form-group">
+        <label for="monthly_amount">Monthly Amount:</label><br>
+        <input type="number" id="monthly_amount" name="monthly_amount" required>
+      </div>
+
+      <div class="form-group">
+        <label for="commission">Commission (%):</label><br>
+        <input type="number" step="0.01" id="commission" name="commission" required>
+      </div>
+
+      <div class="form-group"><button type="submit">Add Scheme</button></div>
+    </form>
+  </div>
+</body>
+
+</html>

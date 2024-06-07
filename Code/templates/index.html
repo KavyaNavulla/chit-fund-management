@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../static/astyle.css">
+</head>
+
+<body>
+    <h1>CHIT FUND MANAGEMENT</h1>
+    <div class="wrapper login">
+        <div class="container">
+            <div class="col-left">
+                <div class="login-text">
+                    <h2>Welcome! {{username}}</h2>
+                    <p>Not a Member..!!<br>Create your account</p> <a href="{{ url_for('register') }}" class="btn">Sign Up</a>
+                </div>
+            </div>
+            <div class="col-right">
+                <div class="login-form">
+
+                    <h2>Login</h2>
+                    <form action="/login" onsubmit="return validateForm()" method="post">
+                        <p> <label>Username/Email address<span>*</span></label> <input type="text" id="username"
+                                name="username" placeholder="Username or Email" required> </p>
+                        <p> <label>Password<span>*</span></label> <input type="password" id="password" name="password"
+                                placeholder="Password" required> </p>
+                        <p> <input type="submit" id="loginButton" value="Log In"> </p>
+                        <p> <a href="{{ url_for('register') }}">Forgot password?</a> </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

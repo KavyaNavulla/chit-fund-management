@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.right-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.right-links .btn {
+  background-color: #2aa15f;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Main Content Styles */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 50px;
+  font-size: 30px;
+  color: black;
+  text-align: center;
+}
+
+.main-content a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-box {
+  background-color: white;
+  padding: 20px;
+  max-width: 350px;
+  border-radius: 30px;
+  box-shadow: 0 8px 8px 0 #2aa15f;
+}
+
+.option-btn {
+  background-color: #2aa15f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  margin: 20px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.footer-bottom {
+  background-color: #333;
+  padding: 2rem 0;
+  color: white;
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: calc(35% - 40px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group button {
+  padding: 10px 20px;
+  background-color: #2aa15f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+}
+
+/* Receipt styles */
+.receipt {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.receipt h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.receipt p {
+  margin: 10px 0;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  .form-group input,
+  .form-group button {
+    padding: 6px;
+  }
+}

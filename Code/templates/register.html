@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title> 
+    <link rel="stylesheet" href="../static/bstyle.css">
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Registration</h2>
+    <form action="/register" method="post">
+      <div class="input-box">
+        <input type="text" name="username" placeholder="Enter your username" required>
+      </div>
+      <div class="input-box">
+        <input type="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" placeholder="Create password" required>
+      </div>
+      <div class="input-box">
+        <input type="password" name="confirm_password" placeholder="Confirm password" required>
+      </div>
+      <div class="policy">
+        <input type="checkbox" required>
+        <h3>I accept all terms & condition</h3>
+      </div>
+      <div class="input-box button">
+        <input type="submit" value="Register Now">
+      </div>
+    </form>
+  </div>
+  <script>
+    function validateForm() {
+
+        // Perform your validation here
+        // If validation fails, return false
+        // If validation passes, redirect and return false to prevent form submission
+        
+        location.href = "home.html";
+        return false;
+    }
+  </script>
+</body>
+</html>

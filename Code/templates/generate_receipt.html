@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>generate_receipt</title>
+    <link rel="stylesheet" href="../static/cstyle.css">
+
+    <style>
+        /* Global styles */
+        
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Welcome {{ username }} !!</a></p>
+        </div>
+        <div class="right-links">
+            <a href="/home">Home</a>
+            <!-- <a href="">Change Profile</a> -->
+            <a href="/"><button class="btn">Log Out</button></a>
+        </div>
+
+    </div>
+    <div class="container">
+        <h1>Please Enter the Details..</h1>
+        <div class="form-group">
+            <label for="chittyValue">Chit Amount Value:</label>
+            <input type="text" id="chittyValue">
+        </div>
+        <div class="form-group">
+            <label for="months">Total Number of Months:</label>
+            <input type="text" id="months">
+        </div>
+        <div class="form-group">
+            <label for="members">Total Number of Members Involved:</label>
+            <input type="text" id="members">
+        </div>
+        <div class="form-group">
+            <label for="name">Member Name:</label>
+            <input type="text" id="name">
+        </div>
+        <div class="form-group">
+            <label for="monthNumber">Month Number for Amount:</label>
+            <input type="text" id="monthNumber">
+        </div>
+        <div class="form-group">
+            <button id="printButton">Print</button>
+        </div>
+        <div id="receiptArea"></div>
+    </div>
+
+    <script>
+        document.getElementById('printButton').addEventListener('click', function () {
+            // Fetching input values
+            var chittyValue = parseInt(document.getElementById('chittyValue').value);
+            var months = parseInt(document.getElementById('months').value);
+            var members = parseInt(document.getElementById('members').value);
+            var name = document.getElementById('name').value;
+            var monthNumber = parseInt(document.getElementById('monthNumber').value);
+
+            // Performing calculations
+            var collectedAmount = (chittyValue / members) * (months - monthNumber + 1) + (((chittyValue / members) + (chittyValue) / (5 * members)) * (monthNumber - 1));
+            var finalAmount = collectedAmount - (chittyValue / 25);
+
+
+            // Get current date
+            var currentDate = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Construct receipt content
+            var receiptContent = `
+            <div class="receipt">
+                <h3>Receipt</h3>
+                <p>Date: ${currentDate}</p>
+                <p>Member Name: ${name}</p>
+                <p>Amount paid for You :${collectedAmount} Rs/-</p>
+		
+            </div>
+        `;
+
+            // Open a new window for printing
+            var printWindow = window.open('', '_blank');
+            printWindow.document.open();
+            printWindow.document.write(receiptContent);
+            printWindow.document.close();
+
+            // Print the contents of the new window
+            printWindow.print();
+        });
+    </script>
+
+
+</body>
+
+</html>
